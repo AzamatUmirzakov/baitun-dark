@@ -1,0 +1,106 @@
+section.stages {
+  background-color: #1c1c1e;
+  div.stages-inside {
+    padding: 124px 0 156px 0;
+    header.stages-header {
+      margin-bottom: 85px;
+      h1 {
+        text-align: center;
+        color: #fff;
+        font-family: "Manrope Bold";
+        font-size: 48px;
+      }
+    }
+    div.stages-list {
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 100%;
+      div.stage-item {
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        display: inline-block;
+        padding: 48px 52px 70px 44px;
+        background: #2c2c2e;
+        border-right: 2px solid #424242;
+        div.stage-item-triangle {
+          transition: all 0.3s ease-in-out;
+          width: 32px;
+          height: 32px;
+          position: absolute;
+          top: 48px;
+          transform: rotate(45deg);
+          z-index: 10;
+          right: -18px;
+          background: #2c2c2e;
+          border-right: 2px solid #424242;
+          border-top: 2px solid #424242;
+        }
+        h1 {
+          transition: all 0.3s ease-in-out;
+          font-family: "Manrope Bold";
+          color: #0a84ff;
+          font-size: 53px;
+          margin-bottom: 24px;
+        }
+        h2 {
+          transition: all 0.3s ease-in-out;
+          font-family: "Manrope Bold";
+          font-size: 20px;
+          color: #fff;
+          margin-bottom: 14px;
+        }
+        p {
+          transition: all 0.3s ease-in-out;
+          font-family: "Manrope Regular";
+          font-size: 14px;
+          line-height: 21px;
+          color: #8e8e93;
+        }
+        &:hover,
+        &:active {
+          background: #0a84ff;
+          border-color: #0a84ff;
+          h1,
+          h2 {
+            color: #fff;
+          }
+          p {
+            color: #d6e0f4;
+          }
+          div.stage-item-triangle {
+            background: #0a84ff;
+            border-color: #0a84ff;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section.stages {
+    div.stages-inside {
+      display: flex;
+      flex-direction: column;
+      padding: 64px 0 80px 0;
+      div.stages-list {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding: 64px 0 80px 0;
+        div.stage-item {
+          border: none;
+          border-bottom: 2px solid #424242;
+          div.stage-item-triangle {
+            top: calc(100% - 16px);
+            left: calc(50% - 16px);
+            transform: rotate(135deg);
+          }
+        }
+        padding-bottom: 0;
+      }
+    }
+  }
+}

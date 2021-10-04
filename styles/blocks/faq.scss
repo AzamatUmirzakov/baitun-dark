@@ -1,0 +1,108 @@
+section.faq {
+  background: #2c2c2e;
+  div.faq-inside {
+    padding-top: 160px;
+    padding-bottom: 270px;
+    display: grid;
+    grid-template-columns: 175px 1fr;
+    column-gap: 190px;
+    div.faq-left {
+      h1 {
+        font-family: "Manrope Regular";
+        font-size: 18px;
+        color: #fff;
+        font-weight: normal;
+      }
+    }
+    div.faq-right {
+      border-bottom: 1px solid #fff;
+      button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 24px 16px 24px 0;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        border-top: 1px solid #fff;
+        font-family: "Manrope Semibold";
+        font-size: 20px;
+        color: #fff;
+        text-align: left;
+        position: relative;
+        &:hover,
+        &:active {
+          cursor: pointer;
+        }
+        & > img {
+          transition: all 0.3s ease-in-out;
+        }
+      }
+      button[data-status="on"] {
+        & > img {
+          transform: rotateX(180deg);
+        }
+      }
+      p {
+        font-family: "Manrope Light";
+        font-size: 15px;
+        line-height: 22.5px;
+        color: #666c75;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        transition-delay: 0;
+      }
+    }
+  }
+}
+
+@keyframes pull-down {
+  from {
+    max-height: 0;
+    margin-bottom: 0;
+  }
+  20% {
+    margin-bottom: 20px;
+  }
+  to {
+    max-height: 999px;
+    margin-bottom: 20px;
+  }
+}
+
+@keyframes pull-up {
+  from {
+    max-height: 999px;
+    margin-bottom: 20px;
+  }
+  20% {
+    margin-bottom: 0;
+  }
+  to {
+    max-height: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  section.faq {
+    div.faq-inside {
+      padding: 48px 0 191px 0;
+      display: flex;
+      flex-direction: column;
+      div.faq-left {
+        margin-bottom: 36px;
+        h1 {
+          font-size: 18px;
+        }
+      }
+      div.faq-right {
+        button.faq-question {
+          padding: 20px 16px 20px 0;
+        }
+      }
+    }
+  }
+}

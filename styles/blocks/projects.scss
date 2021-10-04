@@ -1,0 +1,292 @@
+body {
+  position: relative;
+}
+section.projects {
+  background: #2c2c2e;
+  div.projects-inside {
+    padding: 120px 0 140px 0;
+    margin: 0 auto;
+    overflow: visible;
+    div.slider-scroll {
+      display: block;
+      height: 1px;
+      background: #636366;
+      margin-top: 95px;
+      position: relative;
+      div.slider-scroll-thumb {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        display: inline-block;
+        width: 38%;
+        height: 3px;
+        background-color: #0a84ff;
+        transform: translateZ(0);
+        &:hover,
+        &:active {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  header.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    h1 {
+      font-family: "Manrope Bold";
+      font-weight: normal;
+      color: #fff;
+      font-size: 48px;
+    }
+  }
+  div.projects-slider-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+  div.projects-slider {
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    ul.projects-slider-inside {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding-right: 400px;
+      padding-bottom: 10px;
+      float: left;
+      display: flex;
+      justify-content: space-around;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      li {
+        &:hover,
+        &:active {
+          cursor: pointer;
+        }
+        &:not(:last-child) {
+          margin-right: 40px;
+        }
+        // &:last-child {
+        //   margin-right: 4000px;
+        // }
+        display: inline-block;
+        img {
+          margin-bottom: 16px;
+        }
+        p.item-date {
+          color: #666c75;
+          font-size: 14px;
+          font-family: "Manrope Regular";
+          margin-bottom: 10px;
+        }
+        p.item-name {
+          color: #e7e8ea;
+          font-size: 20px;
+          font-family: "Manrope Semibold";
+        }
+      }
+    }
+  }
+  button.slider-left {
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    border: none;
+    outline: none;
+    width: 48px;
+    height: 48px;
+    top: calc(50% - 24px);
+    left: 48px;
+    padding: 12px;
+    background: #fff;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25),
+      0px 4px 16px rgba(0, 0, 0, 0.25);
+    svg {
+      transform: rotate(180deg);
+      g {
+        rect {
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+    &:hover,
+    &:active {
+      cursor: pointer;
+      svg {
+        g {
+          rect {
+            fill: #3266ca;
+          }
+        }
+      }
+    }
+  }
+  button.slider-right {
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    border: none;
+    outline: none;
+    width: 48px;
+    height: 48px;
+    top: calc(50% - 24px);
+    right: 48px;
+    padding: 12px;
+    background: #fff;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25),
+      0px 4px 16px rgba(0, 0, 0, 0.25);
+    svg {
+      g {
+        rect {
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+    &:hover,
+    &:active {
+      cursor: pointer;
+      svg {
+        g {
+          rect {
+            fill: #3266ca;
+          }
+        }
+      }
+    }
+  }
+}
+
+div.gallery-popup {
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  background: linear-gradient(115.13deg, #242529 0%, #1c1d21 100%);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  overflow-y: scroll;
+  div.gallery-popup-inside {
+    position: relative;
+    padding-top: 124px;
+    padding-bottom: 134px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      font-family: "Manrope Bold";
+      font-weight: normal;
+      font-size: 48px;
+      color: #fff;
+      margin-bottom: 52px;
+      align-self: flex-start;
+    }
+    img:not(:last-child) {
+      margin-bottom: 48px;
+    }
+    img:last-child {
+      margin-bottom: 134px;
+    }
+    button:first-of-type {
+      width: 56px;
+      height: 56px;
+      position: absolute;
+      top: 127px;
+      left: -104px;
+      background: transparent;
+      border: none;
+      outline: none;
+      &:hover,
+      &:active {
+        cursor: pointer;
+      }
+      img {
+        margin-bottom: 0 !important;
+      }
+    }
+    h2 {
+      font-family: "Manrope Bold";
+      font-weight: normal;
+      font-size: 48px;
+      color: #fff;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      font-family: "Manrope Regular";
+      font-size: 16px;
+      color: #666c75;
+      margin-bottom: 56px;
+    }
+    button:last-of-type {
+      @include solid-button(#3266ca, #fff);
+      transition: all 0.15s ease-in-out;
+      margin: 0 auto;
+      &:hover,
+      &:active {
+        background: #174db5;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 1180px) {
+  section.projects {
+    div.projects-inside {
+      padding-top: 92px;
+      padding-bottom: 92px;
+      padding-left: 32px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section.projects {
+    div.projects-inside {
+      div.projects-slider-wrap {
+        & > button {
+          display: none;
+        }
+      }
+      div.slider-scroll {
+        div.slider-scroll-thumb {
+          width: 35px;
+        }
+      }
+    }
+  }
+  div.gallery-popup {
+    div.gallery-popup-inside {
+      h1 {
+        font-size: 32px;
+        margin-bottom: 28px;
+      }
+      button:first-of-type {
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        order: -1;
+        align-self: flex-start;
+        margin-bottom: 14px;
+      }
+      img {
+        max-width: 100%;
+        margin-bottom: 28px;
+      }
+      img:last-child {
+        margin-bottom: 60px;
+      }
+      h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 15px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}

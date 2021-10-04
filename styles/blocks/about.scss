@@ -1,0 +1,104 @@
+section.about {
+  background: #1c1c1e;
+  div.about-inside {
+    display: flex;
+    padding: 110px 50px;
+    div.left {
+      width: 30%;
+      h1 {
+        font-family: "Manrope Regular";
+        font-size: 18px;
+        color: #545962;
+        font-weight: normal;
+      }
+    }
+    div.right {
+      width: 70%;
+      header {
+        margin-bottom: 90px;
+        h1 {
+          font-family: "Manrope Bold";
+          font-size: 48px;
+          color: #fff;
+          margin-bottom: 40px;
+        }
+        p {
+          color: #636366;
+          font-family: "Manrope Regular";
+        }
+      }
+      div.about-statistics {
+        display: grid;
+        grid-template-columns: 45% 45%;
+        column-gap: 10%;
+        row-gap: 16px;
+        div.about-statistics-item {
+          padding: 36px 0 70px 0;
+          border-top: 1px solid #3a3a3c;
+          h1 {
+            font-size: 76px;
+            font-family: "Manrope Bold";
+            color: #fff;
+            span.statistics-small-text {
+              font-size: 32px;
+              margin-left: 10px;
+            }
+          }
+          p {
+            color: #636366;
+            font-family: "Manrope Regular";
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section.about {
+    div.about-inside {
+      flex-direction: column;
+      padding: 0;
+      padding-top: 92px;
+      div.left {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      div.right {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 690px) {
+  section.about {
+    div.about-inside {
+      flex-direction: column;
+      padding: 0;
+      padding-top: 48px;
+      div.left {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      div.right {
+        width: 100%;
+        header.right-header {
+          margin-bottom: 48px;
+          h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+          }
+          p {
+            font-size: 15px;
+            line-height: 25.5px;
+          }
+        }
+        div.about-statistics {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr 1fr 1fr;
+        }
+      }
+    }
+  }
+}

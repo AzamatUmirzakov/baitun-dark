@@ -1,0 +1,55 @@
+section.additional-services {
+  background: #2c2c2e;
+  div.additional-services-inside {
+    padding: 56px 0 184px 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 164px;
+    div.additional-service {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      div.service-text {
+        max-width: 30%;
+        h1 {
+          font-family: "Manrope Bold";
+          font-size: 28px;
+          color: #fff;
+          margin-bottom: 32px;
+        }
+        p {
+          font-family: "Manrope Regular";
+          color: #545962;
+          font-size: 16px;
+          line-height: 25.6px;
+          margin-bottom: 48px;
+        }
+        a {
+          @include bordered-button(#fff, transparent, #0a84ff);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  section.additional-services {
+    div.additional-services-inside {
+      div.additional-service {
+        flex-direction: column;
+        align-items: flex-start;
+        img {
+          max-width: 100%;
+        }
+        div.service-text {
+          max-width: 100%;
+          order: 1;
+          margin-top: 20px;
+          h1 {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}

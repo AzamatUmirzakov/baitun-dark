@@ -1,0 +1,258 @@
+header.page-header {
+  div.header-top {
+    button.solid-button {
+      @include solid-button(#0a84ff, #fff);
+      transition: all 0.3s ease-in-out;
+      display: none;
+      &:hover,
+      &:active {
+        cursor: pointer;
+        background-color: #3266ca;
+      }
+    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.07);
+    z-index: 20;
+    background: #2c2c2e;
+    padding: 0px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button.nav-hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      outline: none;
+      &:hover,
+      &:active {
+        cursor: pointer;
+      }
+      div.hamburger-button-line {
+        width: 100%;
+        height: 2px;
+        background: #000;
+        transition: all 0.3s ease-in-out;
+      }
+      display: none;
+    }
+
+    button.nav-hamburger.active {
+      div.hamburger-button-line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      div.hamburger-button-line:nth-child(2) {
+        opacity: 0;
+      }
+      div.hamburger-button-line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+
+    nav.header-nav {
+      a.header-nav-link {
+        display: inline-block;
+        height: 100%;
+        padding: 27px 4px;
+        margin-right: 55px;
+        color: #fff;
+        font-family: "Manrope Regular";
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease-in-out;
+      }
+
+      a.header-nav-link.active,
+      a.header-nav-link:hover {
+        border-color: #0a84ff;
+      }
+
+      a.header-nav-link:last-of-type {
+        margin-right: 72px;
+      }
+    }
+  }
+
+  div.header-intro {
+    background: url("../assets/images/header-bg.png"), #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 248px 0 210px 0;
+    position: relative;
+    z-index: 0;
+    div.header-intro-inside {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      form#header-form {
+        border-top: 2px solid #3266ca;
+        box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.07);
+        background: #3a3a3c;
+        display: flex;
+        flex-direction: column;
+        padding: 56px;
+        max-width: 480px;
+        box-sizing: border-box;
+        label {
+          font-family: "Manrope Bold";
+          font-size: 24px;
+          color: #fff;
+          margin-bottom: 24px;
+        }
+        input {
+          padding: 24px 0;
+          border: none;
+          outline: none;
+          border-bottom: 1px solid #41454b;
+          font-family: "Manrope Regular";
+          font-size: 18px;
+          color: #e7e8ea;
+          margin-bottom: 20px;
+          transition: all 0.3s ease-in-out;
+          background: transparent;
+          &:hover,
+          &:active {
+            border-color: #3266ca;
+          }
+          &::placeholder {
+            color: #e7e8ea;
+          }
+        }
+        button {
+          @include solid-button(#0a84ff, #1c1c1e);
+          transition: all 0.3s ease-in-out;
+          box-sizing: border-box;
+          max-width: 203px;
+          &:hover {
+            cursor: pointer;
+            background: #3266ca;
+          }
+        }
+      }
+    }
+
+    div.header-text {
+      h1 {
+        z-index: 3;
+        color: #fff;
+        font-size: 64px;
+        font-family: "Manrope ExtraBold";
+        line-height: 80px;
+        max-width: 485px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        max-width: 455px;
+        font-family: "Manrope Light";
+        line-height: 34px;
+        color: #fff;
+        margin-bottom: 32px;
+      }
+
+      button.solid-button {
+        @include solid-button(#fff, #000);
+        transition: all 0.3s ease-in-out;
+        &:hover,
+        &:active {
+          cursor: pointer;
+          background-color: #3266ca;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  div.grey-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.5;
+    display: none;
+  }
+  header.page-header {
+    div.header-intro {
+      div.header-intro-inside {
+        div.header-text {
+          h1 {
+            font-size: 40px;
+            line-height: 50px;
+          }
+        }
+      }
+    }
+    div.header-top {
+      button.solid-button {
+        position: relative;
+        right: -100px;
+      }
+      z-index: 100;
+      padding: 16px 24px;
+      nav.header-nav {
+        z-index: 70;
+        display: flex;
+        width: 100%;
+        padding: 7px 24px;
+        padding-bottom: 0;
+        box-sizing: border-box;
+        background: #fff;
+        flex-direction: column;
+        justify-content: space-between;
+        position: fixed;
+        top: -300px;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+        a.header-nav-link {
+          margin-right: 0;
+          background: #fff;
+          border: none;
+          border-top: 1px solid #e0e0e0;
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+        button.solid-button {
+          display: none;
+        }
+      }
+      button.nav-hamburger {
+        display: flex;
+      }
+    }
+  }
+  header.page-header > div.header-intro {
+    background-size: 1600px;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 1028px) {
+  div.header-intro-inside {
+    flex-direction: column;
+    form#header-form {
+      margin-top: 48px;
+      button {
+        max-width: 100%;
+        min-width: 100%;
+      }
+    }
+  }
+  div.header-top {
+    button.solid-button {
+      display: none !important;
+    }
+  }
+}

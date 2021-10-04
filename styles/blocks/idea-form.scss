@@ -1,0 +1,116 @@
+section.idea-form {
+  border-top: 1px solid #383838;
+  background: #2c2c2e;
+  div.idea-form-inside {
+    padding: 138px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div.form-text {
+      max-width: 486px;
+      h1 {
+        font-family: "Manrope Bold";
+        font-size: 48px;
+        line-height: 62.4px;
+        color: #fff;
+        margin-bottom: 28px;
+      }
+      p {
+        font-family: "Manrope Light";
+        font-size: 16px;
+        color: #666c75;
+      }
+    }
+    form#idea-form {
+      border-top: 2px solid #0a84ff;
+      width: 516px;
+      box-sizing: border-box;
+      background: #3a3a3c;
+      box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.07);
+      padding: 82px 64px 64px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      label {
+        font-family: "Manrope Bold";
+        font-size: 24px;
+        color: #fff;
+        margin-bottom: 24px;
+      }
+      & > :not(:last-child) {
+        margin-bottom: 20px;
+      }
+      & > input {
+        background: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #41454b;
+        padding: 16px 24px;
+        padding-left: 0;
+        color: #e7e8ea;
+        font-family: "Manrope Regular";
+        font-size: 18px;
+        transition: all 0.3s ease-in-out;
+        &:hover,
+        &:active {
+          border-color: #545962;
+        }
+        &:focus,
+        &:active {
+          border-color: #0a84ff;
+        }
+        &::placeholder {
+          color: #e7e8ea;
+          font-family: "Manrope Regular";
+          font-size: 18px;
+        }
+      }
+    }
+    button[type="submit"] {
+      margin-top: 28px;
+      @include solid-button(#0a84ff, #1c1c1e);
+      transition: all 0.3s ease-in-out;
+      &:hover,
+      &:active {
+        cursor: pointer;
+        background: #3266ca;
+      }
+      box-sizing: border-box;
+      max-width: 203px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section.idea-form {
+    div.idea-form-inside {
+      padding: 64px 0 28px 0;
+      flex-direction: column;
+      align-items: flex-start;
+      div.form-text {
+        margin-bottom: 36px;
+        h1 {
+          font-size: 32px;
+          line-height: 41.6px;
+          margin-bottom: 20px;
+        }
+        p {
+          font-size: 15px;
+          line-height: 25.5px;
+        }
+      }
+      form#idea-form {
+        width: 100%;
+        padding: 32px 24px 24px 24px;
+        & > select,
+        & > input {
+          margin-bottom: 12px;
+        }
+        button[type="submit"] {
+          margin-top: 30px;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
